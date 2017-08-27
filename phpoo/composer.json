@@ -1,0 +1,11 @@
+{
+    "name": "ismael/phpoo",
+    "description": "Repositorio de exemplos e estudos de PHP OO",
+    "authors": [
+        {
+            "name": "Ismael",
+            "email": "ismaelirc@gmail.com"
+        }
+    ],
+    "require": {}
+}

@@ -1,0 +1,11 @@
+{
+    "name": "ismael/jwt",
+    "description": "Classe para trabalhar com Json Web Token (teste)",
+    "authors": [
+        {
+            "name": "Ismael",
+            "email": "ismaelirc@gmail.com"
+        }
+    ],
+    "require": {}
+}
