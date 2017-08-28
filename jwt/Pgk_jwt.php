@@ -5,7 +5,6 @@ class PGK_JWT{
 	private $header = [];
 	private $payload = [];
 	private $key = '';
-	private $signature = '';
 	private $algorithm_supported = ['HS256'];
 
 	public function __construct($header,$payload,$key){
@@ -26,13 +25,13 @@ class PGK_JWT{
 		try {
 			$this->__check_info();
 
-			$h = base64_encode($this->header);
-			$p = base64_encode($this->payload);
+			$h = base64_encode(json_encode($this->header));
+			$p = base64_encode(json_encode($this->payload));
 
-			$this->signature = hash_hmac('sha256', "$h.$p", $this->key);
-			$this->signature = base64_encode($this->signature);
+			$hash_signature = hash_hmac('sha256', "$h.$p", $this->key);
+			$hash_signature = base64_encode($hash_signature);
 
-			$token = "$h.$p.$this->signature";
+			$token = "$h.$p.$hash_signature";
 
 			return $token;	
 
